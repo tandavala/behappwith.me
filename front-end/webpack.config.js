@@ -1,6 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglyfyJSPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
     entry: './src/index.jsx',
     module: {
@@ -14,6 +17,9 @@ module.exports = {
             {
                 test: /\.(jpeg|ico|png|gif|svg)$/i,
                 loader: 'file-loader?name=img/[name].[ext]'
+            }, {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ]
     },
@@ -30,7 +36,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.join(__dirname, 'src/index.html')
-        })
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'style.css'
+        }),
+        new UglyfyJSPlugin()
     ],
     devServer: {
         publicPath: '/',
