@@ -10,7 +10,7 @@ class NovoUsuario extends React.Component {
             <div className="center">
                 <form className="pure-form pure-form-stacked">
                     <Label htmlFor="nome" texto="Quem e voce?" />
-                    <Input id="nome" placeholder="Informar o nome" />
+                    <Input id="nome" placeholder="Informar o nome" valorInvalido />
                 </form>
             </div>
         )
