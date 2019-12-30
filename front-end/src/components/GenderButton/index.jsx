@@ -1,16 +1,21 @@
 import React from 'react'
+import './index.css'
 import GenderImage from '../GenderImage'
 
 export default function GenderButton(props) {
     return (
-        <a href="#!"
-            className={props.selecionado ?
-                "gender-button selected-gender-button active" :
-                "gender-button"
+        <a
+            className={
+                props.selecionado ?
+                    "gender-button selected-gender-button" :
+                    "gender-button"
             }
-            onClick={e => props.actualizarGenero(e, props.genero)}
+            href="#!"
+            onClick={e => props.atualizarGenero(e, props.genero)}
         >
-            <GenderImage genero={props.genero} />
+            <GenderImage
+                genero={props.genero}
+            />
         </a>
     )
 }

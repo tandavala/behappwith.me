@@ -1,17 +1,16 @@
 import React from 'react'
-
 import Label from '../Label'
 import Input from '../Input'
 import GenderSelector from '../GenderSelector'
-import Button from '../Button'
-
 import Usuario from '../../model/Usuario'
-
-
+import Avatar from '../../model/Avatar'
+import Button from '../Button'
+import ImageScroller from '../ImageScroller'
 
 class NovoUsuario extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+
         this.state = {
             usuario: new Usuario(),
             validacao: {
@@ -19,8 +18,9 @@ class NovoUsuario extends React.Component {
                 generoInvalido: false
             },
             primeiraVisaoCompleta: false
-        }
+        };
     }
+
     atualizarNome(e) {
         let usuario = this.state.usuario;
         usuario.nome = e.target.value;
@@ -28,13 +28,14 @@ class NovoUsuario extends React.Component {
             usuario: usuario
         });
     }
-    actualizarGenero(e, genero) {
+    atualizarGenero(e, genero) {
         e.preventDefault();
         let usuario = this.state.usuario;
         usuario.genero = genero;
+        usuario.avatar = Avatar.obterTodos()[0];
         this.setState({
             usuario: usuario
-        })
+        });
     }
     validar(e) {
         e.preventDefault();
@@ -64,11 +65,13 @@ class NovoUsuario extends React.Component {
             primeiraVisaoCompleta: primeiraVisaoCompleta
         });
     }
+
     renderizarNome() {
         return (
             <section>
-                <Label htmlFor="nome"
-                    texto="Quem e voce?"
+                <Label
+                    htmlFor="nome"
+                    texto="Quem é você?"
                     valorInvalido={this.state.validacao.nomeInvalido}
                 />
                 <Input
@@ -77,10 +80,13 @@ class NovoUsuario extends React.Component {
                     maxLength="40"
                     readOnly={this.state.primeiraVisaoCompleta}
                     valorInvalido={this.state.validacao.nomeInvalido}
+                    defaultValue={this.state.usuario.nome}
+                    onChange={this.atualizarNome.bind(this)}
                 />
             </section>
         )
     }
+
     renderizarGenero() {
         if (this.state.primeiraVisaoCompleta) {
             return null
@@ -88,17 +94,46 @@ class NovoUsuario extends React.Component {
             return (
                 <section>
                     <Label
-                        texto="Seu Genero:"
-                        valorInvalido={this.state.validacao.generoInvalido} />
+                        texto="Seu gênero:"
+                        valorInvalido={this.state.validacao.generoInvalido}
+                    />
                     <GenderSelector
                         valorInvalido={this.state.validacao.generoInvalido}
                         genero={this.state.usuario.genero}
-                        actualizarGenero={this.actualizarGenero.bind(this)}
+                        atualizarGenero={this.atualizarGenero.bind(this)}
                     />
                 </section>
             )
         }
     }
+
+    renderizarAvatar() {
+        if (this.state.primeiraVisaoCompleta) {
+            return (
+                <section>
+                    <Label
+                        texto="Escolha seu avatar:"
+                    />
+                    <ImageScroller
+                        arquivo="img/avatars.png"
+                        eixoY={(this.state.usuario.genero == 'm' ? 0 : 1)}
+                        elementos={Avatar.obterTodos()}
+                        selecionado={this.state.usuario.avatar}
+                        onChange={avatar => {
+                            let usuario = this.state.usuario;
+                            usuario.avatar = avatar;
+                            this.setState({
+                                usuario: usuario
+                            });
+                        }}
+                    />
+                </section>
+            )
+        } else {
+            return null
+        }
+    }
+
     renderizarBotoes() {
         if (this.state.primeiraVisaoCompleta) {
             return (
@@ -106,35 +141,50 @@ class NovoUsuario extends React.Component {
                     <Button
                         texto="Voltar"
                         onClick={e => {
-                            e.preventDefault()
+                            e.preventDefault();
+                            let usuario = this.state.usuario
+                            usuario.avatar = Avatar.obterTodos()[0];
                             this.setState({
+                                usuario: usuario,
                                 primeiraVisaoCompleta: false
-                            })
-                        }} />
-                    <Button principal texto="Salvar" />
+                            });
+                        }}
+                    />
+                    <Button
+                        principal
+                        texto="Salvar"
+                        onClick={e => {
+                            e.preventDefault()
+                            this.props.onSubmit(this.state.usuario)
+                        }}
+                    />
                 </section>
             )
         } else {
             return (
                 <section>
-                    <Button principal texto="Proximo" onClick={this.validar.bind(this)} />
+                    <Button
+                        principal
+                        texto="Próximo"
+                        onClick={this.validar.bind(this)}
+                    />
                 </section>
             )
         }
     }
-    render() {
 
+    render() {
         return (
             <div className="center">
                 <form className="pure-form pure-form-stacked">
                     {this.renderizarNome()}
                     {this.renderizarGenero()}
+                    {this.renderizarAvatar()}
                     {this.renderizarBotoes()}
                 </form>
-
             </div>
-        )
+        );
     }
 }
 
-export default NovoUsuario
+export default NovoUsuario;

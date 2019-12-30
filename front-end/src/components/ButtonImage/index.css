@@ -1,9 +1,11 @@
-.option-image-scroller {
+/* Tipo: Image Scroller */
+div.option-image-scroller {
     border-radius: 50%;
     padding: 4px;
-    background-color: #bdbdbd;
+    background-color: #bdbdbd;    
     margin: 62px 2px 0 2px;
 }
-.option-image-scroller:hover {
+
+div.option-image-scroller:hover {
     background-color: #8d8d8d;
 }
