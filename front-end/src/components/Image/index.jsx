@@ -1,5 +1,6 @@
 import React from 'react'
 import './img/avatars.png'
+import './img/botoes.png'
 
 
 class Image extends React.Component {
