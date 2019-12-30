@@ -5,7 +5,7 @@ export default function Button(props) {
         'pure-button pure-button-primary' : 'pure-button';
     const estilo = {
         boxSizing: 'border-box',
-        backgroundColor: props.principal ? '#2c80b9' : '#e6e6e6',
+        backgroundColor: props.principal ? '#00AF80' : '#e6e6e6',
         float: props.principal ? 'right' : 'left',
         marginTop: '10px',
         width: '120px',

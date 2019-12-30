@@ -1,12 +1,14 @@
 import React from 'react'
 import './index.css'
 
-
 export default function Header() {
+    const estilo = {
+        textTransform: 'uppercase'
+    }
     return (
         <div className="header pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a href="/"><img className="logo" src="img/logo.png" /></a>
-            <h4 className="label">Agenda de Gentilezas</h4>
+
+            <h4 style={{ estilo }} className="label">Bom Caracter </h4>
         </div>
     );
 }
