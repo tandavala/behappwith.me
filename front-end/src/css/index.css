@@ -76,7 +76,9 @@ a.gender-button {
 a.gender-button:hover {
     background-color: #bdbdbd;
 }
-
+a.selected-gender-button {
+    backgrond-color: #00C853;
+}
 a.selected-gender-button:hover {
     background-color: #00c853;
 }

@@ -5,7 +5,7 @@ export default function GenderButton(props) {
     return (
         <a href="#!"
             className={props.selecionado ?
-                "gender-button  active" :
+                "gender-button selected-gender-button active" :
                 "gender-button"
             }
             onClick={e => props.actualizarGenero(e, props.genero)}

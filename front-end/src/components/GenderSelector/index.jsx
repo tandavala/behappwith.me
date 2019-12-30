@@ -9,8 +9,9 @@ export default function GenderSelector(props) {
         boxSizing: 'border-box',
         border: `1px solid ${cor}`,
         borderRadius: '5px',
-        padding: '3px',
-        paddingBottom: '0'
+        padding: '1px',
+        paddingBottom: '0',
+
     }
 
     return (
