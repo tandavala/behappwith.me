@@ -8,7 +8,7 @@ class Repostory {
         callback()
     }
     obter(successo, falha) {
-        let data = windows.localStorage.getItem(this.key)
+        let data = window.localStorage.getItem(this.key)
         let json = JSON.parse(data)
 
         if (json) {
