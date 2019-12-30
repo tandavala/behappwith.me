@@ -5,12 +5,8 @@ class Usuario {
     }
 
     validarNome() {
-        if (typeof this.nome === 'string' &&
-            this.nome.length != 0 &&
-            this.nome <= 40) {
-            return true
-        }
-        return false
+        console.log({ nome })
+        return true
     }
     validarGenero() {
         return ['m', 'f'].some(param => {
