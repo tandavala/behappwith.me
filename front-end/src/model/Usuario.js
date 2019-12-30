@@ -31,7 +31,7 @@ class Usuario {
             usuario.nome = json.nome
             usuario.genero = json.genero
             usuario.avatar = new Avatar(
-                josn.avatar.index,
+                json.avatar.index,
                 json.avatar.descricao
             )
             sucesso(usuario);

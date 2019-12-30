@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# v0.0.1
+
+CACHE:
+bundle.js
+style.css
+img/avatars.png
+img/botoes.png
+img/favicon.ico
+img/logo.png
+
+NETWORK:
+*
