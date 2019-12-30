@@ -2,17 +2,19 @@ import React from 'react'
 
 import Label from '../Label'
 import Input from '../Input'
-import GenderImage from '../GenderImage'
+import GenderSelector from '../GenderSelector'
 
 class NovoUsuario extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             usuario: {
-                nome: ''
+                nome: '',
+                genero: ''
             },
             validacao: {
-                nomeInvalido: true
+                nomeInvalido: false,
+                generoInvalido: false
             }
 
         }
@@ -23,6 +25,14 @@ class NovoUsuario extends React.Component {
         this.setState({
             usuario: usuario
         });
+    }
+    actualizarGenero(e, genero) {
+        e.preventDefault();
+        let usuario = this.state.usuario;
+        usuario.genero = genero;
+        this.setState({
+            usuario: usuario
+        })
     }
     render() {
 
@@ -35,11 +45,15 @@ class NovoUsuario extends React.Component {
                         name="nome"
                         readOnly={false}
                         placeholder="Digite o teu nome"
-                        maxLength="40" defaultValue="tandavala"
+                        maxLength="40"
                         valorInvalido={this.state.validacao.nomeInvalido}
                         onChange={this.atualizarNome.bind(this)}
                     />
-                    <GenderImage genero="m" />
+                    <GenderSelector
+                        valorInvalido={this.state.validacao.generoInvalido}
+                        genero={this.state.usuario.genero}
+                        actualizarGenero={this.actualizarGenero.bind(this)}
+                    />
                 </form>
 
             </div>
