@@ -1,4 +1,5 @@
 import React from 'react'
+import './img/avatars.png'
 
 
 class Image extends React.Component {
@@ -16,7 +17,7 @@ class Image extends React.Component {
     }
     obterEstilo() {
         return {
-            backGroundImage: `url(${this.props.arquivo})`,
+            backgroundImage: `url(${this.props.arquivo})`,
             backgroundPositionX: this.calcularPosicaoX(),
             backgroundPositionY: this.calcularPosicaoY(),
             width: `${this.props.width}px`,
