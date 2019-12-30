@@ -62,3 +62,13 @@
         margin-top: 92px;
     }
 }
+
+.image {
+    background-image: url(avatars.png);
+    background-size: auto 280px;
+    background-position-y: 0;
+    background-position-x: 0;
+    width: 85px;
+    height: 85px;
+    display: block;
+}
