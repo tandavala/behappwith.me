@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html manifest="behappy.appcache">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>bomcaracter.me</title>
@@ -11,12 +13,13 @@
         navigator.serviceWorker
           .register("behappy.sw.js")
           .then(function(registration) {
-            console.log("ServiceWorker registrado com sucesso.");
+            console.log("ServiceWorker registrado com sucesso!");
           })
           .catch(function(err) {
-            console.log("Erro no registro", err);
+            console.log("Erro no registro: ", err);
           });
       }
+      //-->
     </script>
   </head>
 
