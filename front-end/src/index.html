@@ -8,6 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>bomcaracter.me</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Google Chrome e Mozilal Firefox -->
+    <meta name="theme-color" content="#2c80b9" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#2c80b9" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2c80b9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
@@ -19,11 +26,18 @@
             console.log("Erro no registro: ", err);
           });
       }
-      //-->
     </script>
   </head>
 
   <body>
+    <noscript>
+      <div>
+        Desculpe, mas não é possível utilizar esta aplicação com o recurso de
+        scripts desabilitado. Verifique como habilitá-lo e tente novamente.
+        <br />
+        <img src="img/logo.png" />
+      </div>
+    </noscript>
     <div id="main"></div>
   </body>
 </html>
