@@ -14,7 +14,3 @@ O LightHouse testa se seu aplicativo:
 [] Integrar com o firestore
 [] Adicionar a feature rede social
 [] Adicionar a feature notificações
-
-# Como instalar
-
-Primeiro precisas criar uma conta no [firebase console](https://firebase.google.com/), se ja tens uma conta gmail use essa conta e crie um projecto.
