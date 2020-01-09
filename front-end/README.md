@@ -9,7 +9,7 @@ O LightHouse testa se seu aplicativo:
 - É servido de uma origem segura
 - Usa certas práticas recomendadas de acessibilidade
 
-# TODO
+# TODOs
 
 - [ ] Integrar com o firestore
 - [ ] Adicionar a feature rede social
