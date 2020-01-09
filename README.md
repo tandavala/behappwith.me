@@ -2,7 +2,7 @@
 
 !["Screehshot"](screen.png)
 
-Este projecto é fruto da leitura do livro do [Guilherme Pontes](https://github.com/lgapontes) este livro ensina como construir uma PWA do zero usando o React JS, e o livro foca muito nas boas práticas de construção de uma PWA no final utilizamos a ferramente **LightHouse** do google. **LightHouse** é uma ferramenta de código aberto que audita um aplicativo Web para o recurso PWA, ele fornece um conjunto de métricas para ajudar a guiá-lo na criação de um PWA com uma experiência completa de aplicativo para seus usuários.
+Este projecto é fruto da leitura do [livro](https://www.casadocodigo.com.br/products/livro-pwa) do [Guilherme Pontes](https://github.com/lgapontes) este livro ensina como construir uma PWA do zero usando o React JS, e o livro foca muito nas boas práticas de construção de uma PWA no final utilizamos a ferramente **LightHouse** do google. **LightHouse** é uma ferramenta de código aberto que audita um aplicativo Web para o recurso PWA, ele fornece um conjunto de métricas para ajudar a guiá-lo na criação de um PWA com uma experiência completa de aplicativo para seus usuários.
 
 O LightHouse testa se seu aplicativo:
 
