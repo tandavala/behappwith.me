@@ -14,3 +14,9 @@ O LightHouse testa se seu aplicativo:
 - [ ] Integrar com o firestore
 - [ ] Adicionar a feature rede social
 - [ ] Adicionar a feature notificações
+
+# Check
+
+- [x] Finish my changes
+- [ ] Push my commits to GitHub
+- [ ] Open a pull request
