@@ -11,6 +11,6 @@ O LightHouse testa se seu aplicativo:
 
 # TODO
 
-- [] Integrar com o firestore
-- [] Adicionar a feature rede social
-- [] Adicionar a feature notificações
+- [checkbox:unchecked] Integrar com o firestore
+- [checkbox:unchecked] Adicionar a feature rede social
+- [checkbox:unchecked] Adicionar a feature notificações
