@@ -2,8 +2,8 @@ import React from "react";
 import Label from "../Label";
 import Input from "../Input";
 import GenderSelector from "../GenderSelector";
-import Usuario from "../../model/Usuario";
-import Avatar from "../../model/Avatar";
+import Usuario from "../../models/Usuario";
+import Avatar from "../../models/Avatar";
 import Button from "../Button";
 import ImageScroller from "../ImageScroller";
 

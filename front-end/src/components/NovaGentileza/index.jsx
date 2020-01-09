@@ -1,8 +1,8 @@
 import React from "react";
 import Label from "../Label";
-import Gentileza from "../../models/Gentileza";
-import Destinatario from "../../models/Destinatario";
-import TimeStamp from "../../models/TimeStamp";
+import Gentileza from "../../model/Gentileza";
+import Destinatario from "../../model/Destinatario";
+import TimeStamp from "../../model/TimeStamp";
 import Button from "../Button";
 import ImageScroller from "../ImageScroller";
 import { withRouter } from "react-router-dom";

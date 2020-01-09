@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const Label = (props) => {
+export default function Label(props) {
     const estilo = {
-        color: props.valorInvalido ? "#d50000" : "#444444"
+        color: props.valorInvalido ? '#d50000' : '#444444'
     };
 
     return (
-        <label style={estilo} htmlFor={props.htmlFor}>{props.texto}</label>
-    )
+        <label
+            style={estilo}
+            htmlFor={props.htmlFor}>
+            {props.texto}
+        </label>
+    );
 }
-
-export default Label;
